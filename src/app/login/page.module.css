@@ -1,0 +1,114 @@
+.main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+    position: relative;
+}
+
+.bgOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('/backgrounds/WhatsApp Image 2026-01-30 at 23.08.05.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.2;
+}
+
+.loginContainer {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.loginCard {
+    padding: var(--spacing-xl);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.loginCard h1 {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.formGroup label {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+}
+
+.formGroup small {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.otpInput {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem;
+    letter-spacing: 0.5em;
+    text-align: center;
+}
+
+.formActions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.formActions button {
+    flex: 1;
+}
+
+.error {
+    padding: var(--spacing-sm);
+    background: rgba(220, 38, 38, 0.1);
+    border: var(--border-medium) solid #dc2626;
+    color: #dc2626;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.875rem;
+}
+
+.success {
+    padding: var(--spacing-sm);
+    background: rgba(34, 197, 94, 0.1);
+    border: var(--border-medium) solid #22c55e;
+    color: #22c55e;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .loginCard {
+        padding: var(--spacing-md);
+    }
+
+    .loginCard h1 {
+        font-size: 1.75rem;
+    }
+}

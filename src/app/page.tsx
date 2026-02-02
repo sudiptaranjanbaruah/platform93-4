@@ -1,66 +1,75 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from './page.module.css';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className={styles.main}>
+      <div className={styles.bgOverlay} />
+
+      <section className={styles.hero}>
+        <div className="container">
+          <div className={`${styles.heroContent} fade-in`}>
+            <h1 className={styles.title}>
+              Welcome to <span className={styles.highlight}>NFSU Portal</span>
+            </h1>
+            <p className={styles.subtitle}>
+              Your gateway to campus life, learning resources, and community connection.
+              Share moments, access notes, stay updated with events and notices.
+            </p>
+            <div className={styles.cta}>
+              <a href="/login" className="btn btn-primary">
+                Get Started
+              </a>
+              <a href="/events" className="btn">
+                View Events
+              </a>
+            </div>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className={styles.features}>
+        <div className="container">
+          <div className="grid grid-3">
+            <div className={`card ${styles.featureCard}`}>
+              <div className={styles.featureIcon}>📸</div>
+              <h3>Share & Connect</h3>
+              <p>Upload photos, videos, and blogs. Share your campus experiences with the community.</p>
+            </div>
+
+            <div className={`card ${styles.featureCard}`}>
+              <div className={styles.featureIcon}>📚</div>
+              <h3>Access Notes</h3>
+              <p>Browse batch-wise organized study materials and notes uploaded by students.</p>
+            </div>
+
+            <div className={`card ${styles.featureCard}`}>
+              <div className={styles.featureIcon}>📅</div>
+              <h3>Stay Updated</h3>
+              <p>Get the latest notices and event information from the university administration.</p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className={styles.about}>
+        <div className="container">
+          <div className={`${styles.aboutContent} glass`}>
+            <h2>About NFSU Portal</h2>
+            <p>
+              The National Forensic Sciences University Portal is a comprehensive platform
+              designed to enhance student engagement and streamline access to academic resources.
+              Built with modern web technologies and a focus on user experience, this portal
+              combines brutalist design aesthetics with glassmorphic elements for a unique,
+              contemporary interface.
+            </p>
+            <p>
+              Login with your university email (@as.nfsu.edu.in) to unlock full access to
+              all features including the social feed, notices, and notes repository.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

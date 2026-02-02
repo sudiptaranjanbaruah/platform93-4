@@ -1,0 +1,120 @@
+.main {
+    min-height: 100vh;
+    padding: var(--spacing-xl) 0;
+    background: var(--color-admin);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    margin-top: var(--spacing-sm);
+}
+
+.tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    justify-content: center;
+}
+
+.tab {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: var(--border-medium) solid #000000;
+    background: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+.tab:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px #000000;
+}
+
+.tab.active {
+    background: #000000;
+    color: var(--color-admin);
+}
+
+.formContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    background: #ffffff;
+}
+
+.formContainer h2 {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.formGroup {
+    margin-bottom: var(--spacing-md);
+}
+
+.formGroup label {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    color: #000000;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.success {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(34, 197, 94, 0.1);
+    border: var(--border-medium) solid #22c55e;
+    color: #22c55e;
+    font-family: 'Space Mono', monospace;
+    text-align: center;
+}
+
+.error {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(220, 38, 38, 0.1);
+    border: var(--border-medium) solid #dc2626;
+    color: #dc2626;
+    font-family: 'Space Mono', monospace;
+    text-align: center;
+}
+
+.loading {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
+    .formContainer {
+        padding: var(--spacing-md);
+    }
+}

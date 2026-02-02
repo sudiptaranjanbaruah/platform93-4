@@ -1,0 +1,130 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: var(--spacing-md) 0;
+    border-bottom: var(--border-medium) solid var(--border-color);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.navContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.logo h2 {
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover h2 {
+    transform: scale(1.05);
+}
+
+.menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.navLinks a {
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+    color: var(--text-primary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+}
+
+.navLinks a:hover {
+    border-color: var(--border-color);
+    transform: translateY(-2px);
+}
+
+.adminLink {
+    background: var(--color-admin) !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    padding: var(--spacing-xs) var(--spacing-sm) !important;
+}
+
+.navActions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.themeToggle {
+    background: none;
+    border: var(--border-medium) solid var(--border-color);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+}
+
+.themeToggle:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+.userMenu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.userEmail {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .menuToggle {
+        display: block;
+    }
+
+    .navLinks {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--bg-secondary);
+        border: var(--border-medium) solid var(--border-color);
+        padding: var(--spacing-md);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .navLinks.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .navActions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

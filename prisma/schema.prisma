@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  role      Role     @default(STUDENT)
+  createdAt DateTime @default(now())
+  posts     Post[]
+  notes     Note[]
+  // Relations for admin actions could be added here if needed
+}
+
+enum PostType {
+  BLOG
+  MEDIA
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String?
+  content   String?
+  mediaUrl  String?
+  type      PostType
+  createdAt DateTime @default(now())
+  authorId  Int
+  author    User     @relation(fields: [authorId], references: [id])
+}
+
+model Notice {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  // assuming only admin posts, but nice to track logic in app, purely data here
+}
+
+model Event {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  date        DateTime
+  location    String
+  createdAt   DateTime @default(now())
+}
+
+model Note {
+  id         Int      @id @default(autoincrement())
+  subject    String
+  batch      String
+  fileUrl    String
+  uploadedBy Int
+  uploader   User     @relation(fields: [uploadedBy], references: [id])
+  createdAt  DateTime @default(now())
+}

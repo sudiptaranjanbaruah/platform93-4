@@ -1,141 +1,121 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
-}
-
 .main {
-  display: flex;
   min-height: 100vh;
+  position: relative;
+}
+
+.bgOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  height: 100%;
+  z-index: -1;
+  background-image: url('/backgrounds/WhatsApp Image 2026-01-30 at 23.08.04.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.15;
 }
 
-.intro {
+.hero {
+  padding: var(--spacing-xl) 0;
+  min-height: 70vh;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+  align-items: center;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
+.title {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.highlight {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 8px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.8;
+}
+
+.cta {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.features {
+  padding: var(--spacing-xl) 0;
+  background: var(--bg-secondary);
+  border-top: var(--border-medium) solid var(--border-color);
+  border-bottom: var(--border-medium) solid var(--border-color);
+}
+
+.featureCard {
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.featureCard h3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.featureCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.about {
+  padding: var(--spacing-xl) 0;
+}
+
+.aboutContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  border-radius: 0;
+}
+
+.aboutContent h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.aboutContent p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
   color: var(--text-secondary);
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--button-secondary-border);
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+  .subtitle {
+    font-size: 1rem;
   }
 
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
